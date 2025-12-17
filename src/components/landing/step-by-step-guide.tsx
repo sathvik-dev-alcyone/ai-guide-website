@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import {
   Card,
@@ -7,6 +9,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { useState } from 'react';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 
 const stepsData = [
   {
@@ -60,6 +64,8 @@ const stepsData = [
 ];
 
 const StepByStepGuide = () => {
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+
   return (
     <section className="py-20 md:py-28 bg-muted/50">
       <div className="container mx-auto px-4">
@@ -78,25 +84,40 @@ const StepByStepGuide = () => {
                 <Badge variant="outline" className="text-md mb-2 w-fit-content">STEP {step.step}</Badge>
                 <CardTitle>{step.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col flex-grow">
+              <CardContent className="flex flex-col flex-grow p-6">
                 <div className="flex-grow">
                   <CardDescription className="mb-4 text-base">{step.description}</CardDescription>
                   <Badge variant="secondary">{step.note}</Badge>
                 </div>
                 <div className="mt-6">
-                  <Image
-                    src={step.image}
-                    alt={step.alt}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover rounded-md shadow-md"
-                  />
+                  <button onClick={() => setZoomedImage(step.image)} className="cursor-zoom-in w-full">
+                    <Image
+                      src={step.image}
+                      alt={step.alt}
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-cover rounded-md shadow-md"
+                    />
+                  </button>
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
       </div>
+      <Dialog open={!!zoomedImage} onOpenChange={() => setZoomedImage(null)}>
+        <DialogContent className="max-w-4xl p-0 bg-transparent border-0">
+          {zoomedImage && (
+            <Image
+              src={zoomedImage}
+              alt="Zoomed-in guide image"
+              width={1200}
+              height={800}
+              className="w-full h-auto object-contain rounded-lg"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
