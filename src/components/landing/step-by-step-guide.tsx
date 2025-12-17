@@ -77,6 +77,10 @@ const StepByStepGuide = () => {
               </AccordionTrigger>
               <AccordionContent className="p-6 pt-0">
                 <div className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="md:w-1/2 space-y-4">
+                    <p className="text-muted-foreground text-sm md:text-base">{step.description}</p>
+                    <Badge variant="secondary">{step.note}</Badge>
+                  </div>
                   <div className="md:w-1/2 flex-shrink-0">
                     <Image
                       src={step.image}
@@ -85,10 +89,6 @@ const StepByStepGuide = () => {
                       height={400}
                       className="w-full h-auto object-cover rounded-md shadow-md"
                     />
-                  </div>
-                  <div className="md:w-1/2 space-y-4">
-                    <p className="text-muted-foreground text-sm md:text-base">{step.description}</p>
-                    <Badge variant="secondary">{step.note}</Badge>
                   </div>
                 </div>
               </AccordionContent>
