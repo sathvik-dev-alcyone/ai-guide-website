@@ -53,10 +53,10 @@ const StepByStepGuide = () => {
     <section className="py-20 md:py-28 bg-muted/50">
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight font-headline">A Step-by-Step Visual Guide</h2>
-          <p className="mt-2 text-lg text-muted-foreground">Follow these simple steps to report any issue on campus.</p>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-headline">A Step-by-Step Visual Guide</h2>
+          <p className="mt-2 text-md md:text-lg text-muted-foreground">Follow these simple steps to report any issue on campus.</p>
         </div>
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:gap-12">
           {stepsData.map((step) => (
             step.image && (
               <Card key={step.step} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
@@ -72,8 +72,8 @@ const StepByStepGuide = () => {
                 </CardHeader>
                 <CardContent className="p-6">
                   <Badge variant="outline" className="mb-4">STEP {step.step}</Badge>
-                  <h3 className="text-xl font-bold mb-2 font-headline">{step.title}</h3>
-                  <p className="text-muted-foreground mb-4">{step.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 font-headline">{step.title}</h3>
+                  <p className="text-muted-foreground mb-4 text-sm md:text-base">{step.description}</p>
                   <Badge variant="secondary">{step.note}</Badge>
                 </CardContent>
               </Card>

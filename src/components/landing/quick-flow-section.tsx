@@ -26,11 +26,11 @@ const steps = [
 
 const QuickFlowSection = () => {
   return (
-    <section className="py-16 bg-muted/50">
+    <section className="py-16 md:py-20 bg-muted/50">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight font-headline">The Four-Step Flow</h2>
-          <p className="mt-2 text-lg text-muted-foreground">A simple and efficient process from start to finish.</p>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-headline">The Four-Step Flow</h2>
+          <p className="mt-2 text-md md:text-lg text-muted-foreground">A simple and efficient process from start to finish.</p>
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
