@@ -11,9 +11,11 @@ const HeroSection = () => {
           Goodbye to slow forms. Our AI-powered system lets you report issues with just a photo, making campus maintenance faster and more efficient for everyone.
         </p>
         <div className="mt-10">
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg transition-transform duration-200 hover:scale-105 rounded-full">
-            Report an Issue Now
-          </Button>
+          <a href="https://ai-maintainance-reporter.onrender.com/" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg transition-transform duration-200 hover:scale-105 rounded-full">
+              Report an Issue Now
+            </Button>
+          </a>
         </div>
       </div>
     </section>
