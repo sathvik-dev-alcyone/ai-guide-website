@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 
 const stepsData = [
@@ -78,6 +78,12 @@ const stepsData = [
 
 const StepByStepGuide = () => {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
+  const [zoomedImageAlt, setZoomedImageAlt] = useState<string>('');
+
+  const handleImageClick = (image: string, alt: string) => {
+    setZoomedImage(image);
+    setZoomedImageAlt(alt);
+  }
 
   return (
     <section className="py-20 md:py-28 bg-muted/50">
@@ -103,7 +109,7 @@ const StepByStepGuide = () => {
                   <Badge variant="secondary" className={cn("border-transparent", step.badgeClassName)}>{step.note}</Badge>
                 </div>
                 <div className="mt-6">
-                  <button onClick={() => setZoomedImage(step.image)} className="cursor-zoom-in w-full">
+                  <button onClick={() => handleImageClick(step.image, step.alt)} className="cursor-zoom-in w-full">
                     <Image
                       src={step.image}
                       alt={step.alt}
@@ -120,6 +126,7 @@ const StepByStepGuide = () => {
       </div>
       <Dialog open={!!zoomedImage} onOpenChange={() => setZoomedImage(null)}>
         <DialogContent className="max-w-4xl p-0 bg-transparent border-0">
+          <DialogTitle className="sr-only">{zoomedImageAlt}</DialogTitle>
           {zoomedImage && (
             <Image
               src={zoomedImage}
