@@ -2,22 +2,22 @@ import { LogIn, FilePlus, Camera, Ticket, ArrowRight } from 'lucide-react';
 
 const steps = [
   {
-    icon: <LogIn className="h-8 w-8 text-primary" />,
+    icon: <LogIn className="h-8 w-8 text-primary-foreground" />,
     title: 'Login with REVA Email',
     description: 'Use your official university credentials for secure access.',
   },
   {
-    icon: <FilePlus className="h-8 w-8 text-primary" />,
+    icon: <FilePlus className="h-8 w-8 text-primary-foreground" />,
     title: 'Create New Report',
     description: 'Start a new report with a single click from the dashboard.',
   },
   {
-    icon: <Camera className="h-8 w-8 text-primary" />,
+    icon: <Camera className="h-8 w-8 text-primary-foreground" />,
     title: 'Upload Photo & Location',
     description: 'Snap a picture and the app intelligently finds the location.',
   },
   {
-    icon: <Ticket className="h-8 w-8 text-primary" />,
+    icon: <Ticket className="h-8 w-8 text-primary-foreground" />,
     title: 'Ticket Generated Instantly',
     description: 'Your report is automatically categorized and a ticket is created.',
   },
@@ -36,8 +36,8 @@ const QuickFlowSection = () => {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
             {steps.map((step, index) => (
               <div key={index} className="relative flex flex-col items-center text-center p-4">
-                <div className="flex items-center justify-center h-20 w-20 rounded-full bg-background border-2 border-primary shadow-lg mb-4 z-10">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                <div className="flex items-center justify-center h-20 w-20 rounded-full bg-primary border-2 border-primary-foreground shadow-lg mb-4 z-10">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/80">
                     {step.icon}
                   </div>
                 </div>
