@@ -59,7 +59,7 @@ const StepByStepGuide = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           {stepsData.map((step) => (
             step.image && (
-              <Card key={step.step} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
+              <Card key={step.step} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full bg-white/50 backdrop-blur-lg">
                 <CardHeader className="p-0 relative h-64">
                   <Image
                     src={step.image.imageUrl}
