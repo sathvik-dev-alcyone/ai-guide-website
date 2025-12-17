@@ -1,5 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { LogIn, FilePlus, Camera, Ticket } from 'lucide-react';
+import { LogIn, FilePlus, Camera, Ticket, ArrowRight } from 'lucide-react';
 
 const steps = [
   {
@@ -32,20 +31,27 @@ const QuickFlowSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-headline">The Four-Step Flow</h2>
           <p className="mt-2 text-md md:text-lg text-muted-foreground">A simple and efficient process from start to finish.</p>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, index) => (
-            <Card key={index} className="text-center shadow-md hover:shadow-xl transition-shadow duration-300">
-              <CardHeader>
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                  {step.icon}
+        <div className="relative">
+          <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-border -translate-y-1/2"></div>
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
+            {steps.map((step, index) => (
+              <div key={index} className="relative flex flex-col items-center text-center p-4">
+                <div className="flex items-center justify-center h-20 w-20 rounded-full bg-background border-2 border-primary shadow-lg mb-4 z-10">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    {step.icon}
+                  </div>
                 </div>
-              </CardHeader>
-              <CardContent>
                 <h3 className="text-lg font-semibold">{step.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
-              </CardContent>
-            </Card>
-          ))}
+                {index < steps.length - 1 && (
+                  <>
+                    <ArrowRight className="hidden md:block absolute top-1/2 right-0 h-8 w-8 text-muted-foreground translate-x-1/2 -translate-y-1/2" style={{ right: '-1rem' }} />
+                    <ArrowRight className="block md:hidden absolute bottom-0 right-1/2 h-8 w-8 text-muted-foreground translate-x-1/2 translate-y-full rotate-90" style={{bottom: '-1.5rem'}} />
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
