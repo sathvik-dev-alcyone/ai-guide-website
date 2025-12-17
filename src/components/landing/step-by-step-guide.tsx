@@ -59,22 +59,21 @@ const StepByStepGuide = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           {stepsData.map((step) => (
             step.image && (
-              <Card key={step.step} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
-                <CardHeader className="p-0">
+              <Card key={step.step} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col h-full">
+                <CardHeader className="p-0 relative h-64">
                   <Image
                     src={step.image.imageUrl}
                     alt={step.image.description}
                     data-ai-hint={step.image.imageHint}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
+                    fill
+                    className="w-full h-full object-cover"
                   />
                 </CardHeader>
                 <CardContent className="p-6 flex flex-col flex-grow">
-                  <Badge variant="outline" className="mb-4">STEP {step.step}</Badge>
+                  <Badge variant="outline" className="mb-4 w-fit">STEP {step.step}</Badge>
                   <h3 className="text-lg md:text-xl font-bold mb-2 font-headline">{step.title}</h3>
                   <p className="text-muted-foreground mb-4 text-sm md:text-base flex-grow">{step.description}</p>
-                  <Badge variant="secondary">{step.note}</Badge>
+                  <Badge variant="secondary" className="w-fit">{step.note}</Badge>
                 </CardContent>
               </Card>
             )
