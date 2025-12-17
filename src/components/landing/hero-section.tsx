@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 const HeroSection = () => {
   return (
     <section className="py-20 md:py-32">
-      <div className="container text-center">
+      <div className="container mx-auto text-center">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl font-headline">
           Report Maintenance Issues in Seconds
         </h1>

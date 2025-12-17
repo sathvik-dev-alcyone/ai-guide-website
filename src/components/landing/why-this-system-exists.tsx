@@ -4,7 +4,7 @@ import { XCircle, CheckCircle } from 'lucide-react';
 const WhyThisSystemExists = () => {
   return (
     <section className="py-20 md:py-28">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight font-headline">The Old Way vs. The Smart Way</h2>
           <p className="mt-2 text-lg text-muted-foreground">Modernizing campus maintenance reporting for the digital age.</p>

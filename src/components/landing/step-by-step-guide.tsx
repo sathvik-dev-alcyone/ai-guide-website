@@ -51,7 +51,7 @@ const stepsData = [
 const StepByStepGuide = () => {
   return (
     <section className="py-20 md:py-28 bg-muted/50">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-headline">A Step-by-Step Visual Guide</h2>
           <p className="mt-2 text-md md:text-lg text-muted-foreground">Follow these simple steps to report any issue on campus.</p>

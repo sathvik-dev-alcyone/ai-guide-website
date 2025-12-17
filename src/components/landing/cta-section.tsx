@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 const CtaSection = () => {
   return (
     <section className="py-20 bg-muted">
-      <div className="container text-center">
+      <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold tracking-tight font-headline">
           Ready to Streamline Campus Maintenance?
         </h2>
