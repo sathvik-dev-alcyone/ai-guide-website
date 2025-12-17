@@ -56,10 +56,10 @@ const StepByStepGuide = () => {
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-headline">A Step-by-Step Visual Guide</h2>
           <p className="mt-2 text-md md:text-lg text-muted-foreground">Follow these simple steps to report any issue on campus.</p>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 md:gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           {stepsData.map((step) => (
             step.image && (
-              <Card key={step.step} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <Card key={step.step} className="overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
                 <CardHeader className="p-0">
                   <Image
                     src={step.image.imageUrl}
@@ -70,10 +70,10 @@ const StepByStepGuide = () => {
                     className="w-full h-auto object-cover"
                   />
                 </CardHeader>
-                <CardContent className="p-6">
+                <CardContent className="p-6 flex flex-col flex-grow">
                   <Badge variant="outline" className="mb-4">STEP {step.step}</Badge>
                   <h3 className="text-lg md:text-xl font-bold mb-2 font-headline">{step.title}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm md:text-base">{step.description}</p>
+                  <p className="text-muted-foreground mb-4 text-sm md:text-base flex-grow">{step.description}</p>
                   <Badge variant="secondary">{step.note}</Badge>
                 </CardContent>
               </Card>
