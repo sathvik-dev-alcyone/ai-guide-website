@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const stepsData = [
@@ -61,40 +62,40 @@ const stepsData = [
 const StepByStepGuide = () => {
   return (
     <section className="py-20 md:py-28 bg-muted/50">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-headline">A Step-by-Step Visual Guide</h2>
-          <p className="mt-2 text-md md:text-lg text-muted-foreground">Follow these simple steps to report any issue on campus.</p>
+          <h2 className="text-3xl font-bold tracking-tight font-headline">
+            A Step-by-Step Visual Guide
+          </h2>
+          <p className="mt-2 text-lg text-muted-foreground">
+            Follow these simple steps to report any issue on campus.
+          </p>
         </div>
-        <Accordion type="single" collapsible className="w-full space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {stepsData.map((step) => (
-            <AccordionItem key={step.step} value={`item-${step.step}`} className="bg-background/50 backdrop-blur-lg border rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <AccordionTrigger className="p-6 text-left hover:no-underline">
-                <div className="flex items-center gap-4">
-                  <Badge variant="outline" className="text-lg">STEP {step.step}</Badge>
-                  <h3 className="text-lg md:text-xl font-bold font-headline">{step.title}</h3>
+            <Card key={step.step} className="bg-background/50 backdrop-blur-lg shadow-lg overflow-hidden border-0 flex flex-col">
+              <CardHeader>
+                <Badge variant="outline" className="text-md mb-2 w-fit-content">STEP {step.step}</Badge>
+                <CardTitle>{step.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col flex-grow">
+                <div className="flex-grow">
+                  <CardDescription className="mb-4 text-base">{step.description}</CardDescription>
+                  <Badge variant="secondary">{step.note}</Badge>
                 </div>
-              </AccordionTrigger>
-              <AccordionContent className="p-6 pt-0">
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  <div className="md:w-1/2 space-y-4">
-                    <p className="text-muted-foreground text-sm md:text-base">{step.description}</p>
-                    <Badge variant="secondary">{step.note}</Badge>
-                  </div>
-                  <div className="md:w-1/2 flex-shrink-0">
-                    <Image
-                      src={step.image}
-                      alt={step.alt}
-                      width={600}
-                      height={400}
-                      className="w-full h-auto object-cover rounded-md shadow-md"
-                    />
-                  </div>
+                <div className="mt-6">
+                  <Image
+                    src={step.image}
+                    alt={step.alt}
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover rounded-md shadow-md"
+                  />
                 </div>
-              </AccordionContent>
-            </AccordionItem>
+              </CardContent>
+            </Card>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );
