@@ -5,10 +5,13 @@ const HeroSection = () => {
     <section className="py-20 md:py-32">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl font-headline">
-          Report Maintenance Issues in Seconds
+          AI Maintenance Reporter — User Guide
         </h1>
+        <p className="mt-4 text-2xl lg:text-3xl text-muted-foreground font-light">
+          How to Report a Campus Maintenance Issue
+        </p>
         <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground">
-          Goodbye to slow forms. Our AI-powered system lets you report issues with just a photo, making campus maintenance faster and more efficient for everyone.
+          This guide explains how students and staff can report maintenance issues on campus using the AI Maintenance Reporter system.
         </p>
         <div className="mt-10">
           <a href="https://ai-maintainance-reporter.onrender.com/" target="_blank" rel="noopener noreferrer">
