@@ -11,6 +11,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { useState } from 'react';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { cn } from '@/lib/utils';
 
 const stepsData = [
   {
@@ -20,6 +21,8 @@ const stepsData = [
     note: 'Use your ...@reva.edu.in account.',
     image: '/images/step1.png',
     alt: 'App login screen on a mobile phone.',
+    cardClassName: 'bg-blue-100/20',
+    badgeClassName: 'bg-blue-200/50 text-blue-900',
   },
   {
     step: 2,
@@ -28,6 +31,8 @@ const stepsData = [
     note: 'The dashboard shows your past reports.',
     image: '/images/step2.png',
     alt: 'Dashboard with a "Create New Report" button highlighted.',
+    cardClassName: 'bg-purple-100/20',
+    badgeClassName: 'bg-purple-200/50 text-purple-900',
   },
   {
     step: 3,
@@ -36,6 +41,8 @@ const stepsData = [
     note: 'A clear, well-lit photo helps the AI work better.',
     image: '/images/step3.png',
     alt: 'Interface for uploading a photo of a maintenance issue.',
+    cardClassName: 'bg-pink-100/20',
+    badgeClassName: 'bg-pink-200/50 text-pink-900',
   },
   {
     step: 4,
@@ -44,6 +51,8 @@ const stepsData = [
     note: 'GPS can help, but confirm the pin location.',
     image: '/images/step4.png',
     alt: 'Map interface showing a pin dropped on a location.',
+    cardClassName: 'bg-green-100/20',
+    badgeClassName: 'bg-green-200/50 text-green-900',
   },
   {
     step: 5,
@@ -52,6 +61,8 @@ const stepsData = [
     note: 'Keep descriptions concise and to the point.',
     image: '/images/step5.png',
     alt: 'Final submission screen with description field and submit button.',
+    cardClassName: 'bg-yellow-100/20',
+    badgeClassName: 'bg-yellow-200/50 text-yellow-900',
   },
   {
     step: 6,
@@ -60,6 +71,8 @@ const stepsData = [
     note: 'You will receive notifications on status updates.',
     image: '/images/step6.png',
     alt: 'Success message confirming the maintenance ticket was generated.',
+    cardClassName: 'bg-red-100/20',
+    badgeClassName: 'bg-red-200/50 text-red-900',
   },
 ];
 
@@ -79,7 +92,7 @@ const StepByStepGuide = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {stepsData.map((step) => (
-            <Card key={step.step} className="bg-background/50 backdrop-blur-lg shadow-lg overflow-hidden border-0 flex flex-col">
+            <Card key={step.step} className={cn("bg-background/50 backdrop-blur-lg shadow-lg overflow-hidden border-0 flex flex-col", step.cardClassName)}>
               <CardHeader>
                 <Badge variant="outline" className="text-md mb-2 w-fit-content">STEP {step.step}</Badge>
                 <CardTitle>{step.title}</CardTitle>
@@ -87,7 +100,7 @@ const StepByStepGuide = () => {
               <CardContent className="flex flex-col flex-grow p-6">
                 <div className="flex-grow">
                   <CardDescription className="mb-4 text-base">{step.description}</CardDescription>
-                  <Badge variant="secondary">{step.note}</Badge>
+                  <Badge variant="secondary" className={cn("border-transparent", step.badgeClassName)}>{step.note}</Badge>
                 </div>
                 <div className="mt-6">
                   <button onClick={() => setZoomedImage(step.image)} className="cursor-zoom-in w-full">
