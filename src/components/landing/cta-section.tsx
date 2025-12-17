@@ -5,7 +5,7 @@ const CtaSection = () => {
     <section className="py-20 bg-muted">
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold tracking-tight font-headline">
-          Ready to Streamline Campus Maintenance?
+          System Access
         </h2>
         <p className="mt-4 max-w-xl mx-auto text-lg text-muted-foreground">
           Join the rest of the campus community in making REVA University a better, safer place.

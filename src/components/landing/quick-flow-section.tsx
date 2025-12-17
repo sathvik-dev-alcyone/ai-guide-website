@@ -28,7 +28,7 @@ const QuickFlowSection = () => {
     <section className="py-16 md:py-20 bg-muted/50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-headline">The Four-Step Flow</h2>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight font-headline">System Reporting Workflow</h2>
           <p className="mt-2 text-md md:text-lg text-muted-foreground">A simple and efficient process from start to finish.</p>
         </div>
         <div className="relative">

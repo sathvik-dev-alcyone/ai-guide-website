@@ -24,7 +24,7 @@ const AudienceSection = () => {
     <section className="py-20 md:py-28">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight font-headline">Who is this for?</h2>
+          <h2 className="text-3xl font-bold tracking-tight font-headline">Intended Users</h2>
           <p className="mt-2 text-lg text-muted-foreground">A unified system for the entire REVA University community.</p>
         </div>
         <div className="space-y-12">
