@@ -6,7 +6,7 @@ const WhyThisSystemExists = () => {
     <section className="py-20 md:py-28">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight font-headline">The Old Way vs. The Smart Way</h2>
+          <h2 className="text-3xl font-bold tracking-tight font-headline">The Old Way vs. The AI Way</h2>
           <p className="mt-2 text-lg text-muted-foreground">Modernizing campus maintenance reporting for the digital age.</p>
         </div>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
@@ -39,7 +39,7 @@ const WhyThisSystemExists = () => {
           <Card className="border-green-500/50 border-2 shadow-lg">
             <CardHeader className="flex-row items-center gap-4">
               <CheckCircle className="h-10 w-10 text-green-500" />
-              <CardTitle className="text-2xl font-headline">AI Maintenance Reporter</CardTitle>
+              <CardTitle className="text-2xl font-headline">AI-Based Reporting</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4 text-muted-foreground">
