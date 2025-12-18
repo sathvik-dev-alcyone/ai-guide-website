@@ -19,7 +19,7 @@ const WhyThisSystemExists = () => {
               <ul className="space-y-4 text-muted-foreground">
                 <li className="flex items-start">
                   <XCircle className="h-5 w-5 mr-3 mt-1 shrink-0 text-destructive/80" />
-                  <span>Time-consuming manual forms that are easy to misplace.</span>
+                  <span>Time consuming manual forms that are easy to misplace.</span>
                 </li>
                 <li className="flex items-start">
                   <XCircle className="h-5 w-5 mr-3 mt-1 shrink-0 text-destructive/80" />
@@ -39,7 +39,7 @@ const WhyThisSystemExists = () => {
           <Card className="border-green-500/50 border-2 shadow-lg">
             <CardHeader className="flex-row items-center gap-4">
               <CheckCircle className="h-10 w-10 text-green-500" />
-              <CardTitle className="text-2xl font-headline">AI-Based Reporting</CardTitle>
+              <CardTitle className="text-2xl font-headline">AI Based Reporting</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-4 text-muted-foreground">

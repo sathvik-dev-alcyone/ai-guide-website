@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section className="py-20 md:py-32">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl font-headline">
-          AI Maintenance Reporter — User Guide
+          AI Maintenance Reporter User Guide
         </h1>
         <p className="mt-4 text-2xl lg:text-3xl text-muted-foreground font-light">
           How to Report a Campus Maintenance Issue

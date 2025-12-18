@@ -15,7 +15,7 @@ const audiences = [
   {
     icon: <Shield className="h-12 w-12 text-primary-foreground" />,
     title: 'Administration',
-    description: 'Gain a centralized, real-time overview of all campus maintenance issues. Streamline workflows and improve operational efficiency.',
+    description: 'Gain a centralized, real time overview of all campus maintenance issues. Streamline workflows and improve operational efficiency.',
   },
 ];
 
